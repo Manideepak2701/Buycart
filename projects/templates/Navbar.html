@@ -1,0 +1,211 @@
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+  <div class="container-fluid">
+    <nav class="navbar navbar-light ">
+  <a class="navbar-brand navbar-dark" href="/">
+    <img src="https://cdn.vectorstock.com/i/1000x1000/84/43/trolley-buy-cart-shopping-icon-concept-flat-vector-22928443.webp" width="35" height="35" class="d-inline-block align-top" alt="" >
+    <font size="+2" style="color:#000000 ">Buycart</font>
+  </a>
+</nav>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" style="color:#000000 " href='/'>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" style="color:#000000 " href='home'>Men</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" style="color:#000000 " href='women'>Women</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" style="color:#000000 " href='children'>Children</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" style="color:#000000 " href='login'>Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" style="color:#000000 " href='contactus'>Contact us</a>
+        </li>
+      </ul>
+
+
+<div class="select-menu active">
+  <div class="select-btn">
+    <a class="nav-link dropdown-toggle" href="#" style="color:#000000 " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown</a>
+  </div>
+
+  <ul class="options">
+    <li class="option">
+      <i class="bx bxl-instagram-alt" style="color: #E1306C;"></i>
+      <a class="option-text" href='cart'>Cart</a>
+    </li>
+    <li class="option">
+      <i class="bx bxl-linkedin-square" style="color: #0E76A8;"></i>
+      <a class="option-text" href='#'>Product details</a>
+    </li>
+    <li class="option">
+      <i class="bx bxl-facebook-circle" style="color: #4267B2;"></i>
+      <a class="option-text" href='#'>Product checkout</a>
+    </li>
+    <li class="option">
+      <i class="bx bxl-twitter" style="color: #1DA1F2;"></i>
+      <a class="option-text" href='#'>Orders</a>
+    </li>
+    <li class="option">
+      <i class="bx bxl-twitter" style="color: #1DA1F2;"></i>
+      <a class="option-text" href='#'>Wishlist</a>
+    </li>
+  </ul>
+</div>
+
+
+      <form class="d-flex my-2 my-lg-0" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-dark" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<script>
+const optionMenu = document.querySelector(".select-menu"),
+  selectBtn = optionMenu.querySelector(".select-btn"),
+  options = optionMenu.querySelectorAll(".option"),
+  sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+selectBtn.addEventListener("click", () =>
+  optionMenu.classList.toggle("active")
+);
+
+options.forEach((option) => {
+  option.addEventListener("click", () => {
+    let selectedOption = option.querySelector(".option-text").innerText;
+    sBtn_text.innerText = selectedOption;
+
+    optionMenu.classList.remove("active");
+  });
+});
+</script>
+
+
+<style>
+.container-fluid {
+  overflow: hidden;
+  background-color: #669999;
+}
+
+.container-fluid a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 5px 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.container-fluid a:hover {
+  background-color: #ddd;
+  color: black;
+}
+ul li ul.dropdown-menu li{
+display: block;
+}
+
+ul li a:hover {
+background: #112C66;
+}
+ul li:hover ul.dropdown-menu {
+display: block;
+}
+
+</style>
+
+
+<style>
+.select-menu {
+  max-width: 330px;
+  margin: 10px auto;
+}
+.select-menu .select-btn {
+  display: flex;
+  height: 20px;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+}
+.select-menu .options {
+  position: absolute;
+  width: 330px;
+  overflow-y: auto;
+  max-height: 295px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+  animation-duration: 0.35s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.35s;
+  -webkit-animation-fill-mode: both;
+}
+.select-menu .options .option {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.select-menu .options .option i {
+  font-size: 25px;
+  margin-right: 12px;
+}
+.select-menu .options .option .option-text {
+  font-size: 18px;
+  color: #333;
+}
+
+.select-btn i {
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+.select-menu.active .select-btn i {
+  transform: rotate(-180deg);
+}
+.select-menu.active .options {
+  display: block;
+  opacity: 0;
+  z-index: 10;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+}
+</style>
+
+{% block body %}
+{% endblock %}
+
+</body>
+</html>
